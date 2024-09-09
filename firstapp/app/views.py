@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from .forms import UserForm
 from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect
 
 # Create your views here.
 def index(request):
-    return render(request, "a545/index.html")
+    userform = UserForm()
+    return render(request, "a545/index.html", {"form": userform})
 
 def about(request):
     return HttpResponse("About")
